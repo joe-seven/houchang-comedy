@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>候场喜剧 Loading Zone Comedy · 澳大利亚双语喜剧厂牌</title>
+<meta name="description" content="候场喜剧 Loading Zone Comedy——澳大利亚 AUNZ COMEDY MEDIA 旗下专业双语喜剧厂牌，常驻墨尔本与悉尼。专场巡演、每周开放麦、特别企划、喜剧工作坊、播客《靠左行驶》。候场喜剧，快乐不止这一场！">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500&family=Archivo:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7;
+    --ink:#141414;
+    --gray:#75726B;
+    --hair:#E4E1D8;
+    --gold:#A5823C;
+    --serif:"Noto Serif SC",serif;
+    --sans:"Noto Sans SC",-apple-system,"PingFang SC",sans-serif;
+    --eng:"Archivo",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:15px;line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--ink);color:var(--paper);}
+  a{color:inherit;}
+
+  /* ---------- 顶栏 ---------- */
+  header.top{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:20px 48px;
+    background:rgba(251,250,247,.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--hair);
+  }
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .brand img{width:28px;height:28px;border-radius:50%;}
+  .brand span{font-family:var(--serif);font-weight:900;font-size:16px;letter-spacing:.14em;}
+  .top nav{display:flex;gap:36px;}
+  .top nav a{
+    text-decoration:none;font-size:13px;letter-spacing:.14em;color:var(--gray);
+    transition:color .2s;
+  }
+  .top nav a:hover{color:var(--ink);}
+  @media (max-width:720px){
+    header.top{padding:16px 20px;}
+    .top nav{gap:18px;}
+    .top nav a{font-size:12px;letter-spacing:.06em;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    max-width:1120px;margin:0 auto;
+    padding:190px 48px 130px;
+  }
+  @media (max-width:720px){.hero{padding:150px 20px 90px;}}
+  .hero .kicker{
+    font-family:var(--eng);font-size:11px;letter-spacing:.4em;color:var(--gold);
+    text-transform:uppercase;
+  }
+  .hero h1{
+    font-family:var(--serif);font-weight:900;
+    font-size:clamp(56px,10vw,120px);letter-spacing:.06em;line-height:1.2;
+    margin-top:26px;
+  }
+  .hero .en{
+    font-family:var(--eng);font-size:clamp(11px,1.6vw,14px);
+    letter-spacing:.55em;color:var(--gray);margin-top:18px;text-transform:uppercase;
+  }
+  .hero .intro{
+    margin-top:60px;max-width:560px;color:var(--gray);font-size:16px;
+  }
+  .hero .intro b{color:var(--ink);font-weight:500;}
+  .hero .links{margin-top:44px;display:flex;gap:36px;flex-wrap:wrap;}
+  .hero .links a{
+    text-decoration:none;font-size:14px;letter-spacing:.1em;
+    border-bottom:1px solid var(--ink);padding-bottom:4px;
+    transition:opacity .2s;
+  }
+  .hero .links a:hover{opacity:.45;}
+  .hero .links a.dim{border-bottom-color:var(--hair);color:var(--gray);}
+  figure.photo{margin-top:72px;}
+  figure.photo img{display:block;width:100%;border:1px solid var(--hair);}
+  figure.photo figcaption{
+    font-size:12px;letter-spacing:.14em;color:var(--gray);margin-top:12px;
+  }
+  figure.photo figcaption i{font-style:normal;color:var(--gold);}
+
+  /* ---------- 板块 ---------- */
+  section{max-width:1120px;margin:0 auto;padding:100px 48px;}
+  @media (max-width:720px){section{padding:70px 20px;}}
+  .sec{
+    display:grid;grid-template-columns:220px 1fr;gap:64px;
+    border-top:1px solid var(--hair);padding-top:64px;
+  }
+  @media (max-width:860px){.sec{grid-template-columns:1fr;gap:28px;}}
+  .sec .label{
+    font-family:var(--eng);font-size:11px;letter-spacing:.34em;color:var(--gold);
+    text-transform:uppercase;
+  }
+  .sec .label small{
+    display:block;font-family:var(--serif);font-weight:900;font-size:22px;
+    letter-spacing:.16em;color:var(--ink);margin-top:12px;text-transform:none;
+  }
+  .sec .content > p{color:var(--gray);max-width:620px;}
+  .sec .content > p b{color:var(--ink);font-weight:500;}
+
+  /* 关于 */
+  .facts{
+    margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--hair);
+  }
+  @media (max-width:640px){.facts{grid-template-columns:1fr;}}
+  .fact{padding:28px 24px 0 0;border-right:1px solid var(--hair);}
+  .fact:last-child{border-right:none;}
+  @media (max-width:640px){.fact{border-right:none;border-bottom:1px solid var(--hair);padding:20px 0;}.fact:last-child{border-bottom:none;}}
+  .fact .n{font-family:var(--serif);font-weight:900;font-size:32px;}
+  .fact .n i{font-style:normal;color:var(--gold);}
+  .fact .l{font-size:12px;letter-spacing:.22em;color:var(--gray);margin-top:6px;}
+  .mod-list{margin-top:44px;}
+  .mod-row{
+    display:grid;grid-template-columns:130px 1fr;gap:24px;
+    padding:20px 0;border-top:1px solid var(--hair);align-items:baseline;
+  }
+  .mod-row:last-child{border-bottom:1px solid var(--hair);}
+  @media (max-width:560px){.mod-row{grid-template-columns:1fr;gap:4px;}}
+  .mod-row .mt{font-family:var(--serif);font-weight:900;font-size:16px;letter-spacing:.1em;white-space:nowrap;}
+  .mod-row .md{color:var(--gray);font-size:14px;}
+
+  /* 演出 */
+  .feature{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:end;
+    padding:36px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+  }
+  @media (max-width:760px){.feature{grid-template-columns:1fr;gap:36px;}}
+  .feature .side img{display:block;width:100%;border:1px solid var(--hair);}
+  .feature .side .cap{font-size:12px;letter-spacing:.14em;color:var(--gray);margin-top:10px;}
+  .feature .t{
+    font-family:var(--eng);font-size:11px;letter-spacing:.4em;color:var(--gold);
+    text-transform:uppercase;
+  }
+  .feature h3{
+    font-family:var(--serif);font-weight:900;font-size:clamp(26px,4.4vw,40px);
+    letter-spacing:.08em;margin-top:14px;line-height:1.5;
+  }
+  .feature h3 small{
+    font-family:var(--eng);font-weight:400;font-size:12px;letter-spacing:.3em;
+    color:var(--gray);display:block;margin-top:10px;
+  }
+  .feature p{color:var(--gray);font-size:14px;margin-top:16px;max-width:560px;}
+  .feature .meta{font-size:13px;color:var(--gray);margin-top:20px;letter-spacing:.06em;}
+  .feature .meta b{color:var(--ink);font-weight:500;}
+  .tour-list{margin-top:8px;}
+  .live-strip{
+    margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:32px;
+  }
+  @media (max-width:680px){.live-strip{grid-template-columns:1fr;}}
+  .live-strip figure img{display:block;width:100%;border:1px solid var(--hair);}
+  .live-strip figure figcaption{
+    font-size:12px;letter-spacing:.14em;color:var(--gray);margin-top:10px;
+  }
+  .live-strip figure figcaption i{font-style:normal;color:var(--gold);}
+  .tour{
+    display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;
+    padding:22px 0;border-bottom:1px solid var(--hair);
+    transition:padding .25s;
+  }
+  .tour:hover{padding-left:12px;}
+  .tour .main{font-size:15px;}
+  .tour .main b{font-family:var(--serif);font-weight:900;font-size:16px;letter-spacing:.08em;}
+  .tour .main span{color:var(--gray);}
+  .tour .city{font-size:12px;letter-spacing:.14em;color:var(--gray);white-space:nowrap;}
+  @media (max-width:560px){.tour{grid-template-columns:1fr;gap:4px;}}
+
+  /* 开放麦 */
+  .om-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}
+  @media (max-width:860px){.om-cols{grid-template-columns:1fr;gap:36px;}}
+  .om h4{
+    font-family:var(--serif);font-weight:900;font-size:18px;letter-spacing:.12em;
+    padding-top:20px;border-top:1px solid var(--ink);
+  }
+  .om h4 small{
+    display:block;font-family:var(--eng);font-weight:400;font-size:10px;
+    letter-spacing:.34em;color:var(--gold);margin-bottom:8px;
+  }
+  .om p{color:var(--gray);font-size:14px;margin-top:14px;}
+  .om p b{color:var(--ink);font-weight:500;}
+  .om-media{
+    margin-top:56px;display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:56px;align-items:end;
+  }
+  @media (max-width:760px){.om-media{grid-template-columns:1fr;gap:32px;}}
+  .om-media img{display:block;width:100%;max-width:340px;border:1px solid var(--hair);}
+  .om-media .cap{font-size:12px;letter-spacing:.14em;color:var(--gray);margin-top:12px;}
+  .om-media .quote{
+    font-family:var(--serif);font-weight:600;font-size:clamp(20px,3vw,26px);
+    line-height:2;letter-spacing:.06em;
+  }
+  .om-media .quote small{
+    display:block;font-family:var(--sans);font-weight:400;font-size:13px;
+    color:var(--gray);letter-spacing:.1em;margin-top:16px;line-height:1.9;
+  }
+  .om-note{
+    margin-top:56px;font-size:13px;color:var(--gray);max-width:640px;
+    padding-left:16px;border-left:2px solid var(--gold);
+  }
+  .om-note b{color:var(--ink);font-weight:500;}
+
+  /* 播客 */
+  .pod{text-align:center;}
+  .pod .label{font-family:var(--eng);font-size:11px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;}
+  .pod h3{font-family:var(--serif);font-weight:900;font-size:clamp(34px,6vw,56px);letter-spacing:.14em;margin-top:20px;}
+  .pod p{color:var(--gray);max-width:520px;margin:22px auto 0;font-size:15px;}
+  .pod .hint{margin-top:30px;font-size:12px;letter-spacing:.22em;color:var(--gray);}
+  .pod .hint b{color:var(--ink);font-weight:500;}
+
+  /* 联系 */
+  .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;}
+  @media (max-width:860px){.contact-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.contact-grid{grid-template-columns:1fr;}}
+  .cg .k{font-family:var(--eng);font-size:10px;letter-spacing:.34em;color:var(--gold);text-transform:uppercase;}
+  .cg h5{font-family:var(--serif);font-weight:900;font-size:17px;letter-spacing:.12em;margin-top:12px;}
+  .cg p{color:var(--gray);font-size:13px;margin-top:8px;}
+  .cg p b{color:var(--ink);font-weight:500;}
+  .cg .qr{width:112px;border:1px solid var(--hair);display:block;margin-top:18px;padding:6px;background:#fff;}
+
+  footer{
+    border-top:1px solid var(--hair);
+    max-width:1120px;margin:60px auto 0;padding:36px 48px 48px;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-size:12px;color:var(--gray);letter-spacing:.08em;
+  }
+  @media (max-width:720px){footer{padding:28px 20px 36px;}}
+  footer .slogan{font-family:var(--serif);font-weight:600;color:var(--ink);letter-spacing:.2em;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#top">
+    <img src="images/logo.png" alt="候场喜剧">
+    <span>候场喜剧</span>
+  </a>
+  <nav>
+    <a href="#about">关于</a>
+    <a href="#shows">演出</a>
+    <a href="#openmic">开放麦</a>
+    <a href="#podcast">播客</a>
+    <a href="#contact">联系</a>
+  </nav>
+</header>
+
+<div class="hero" id="top">
+  <div class="kicker">Loading Zone Comedy · Australia</div>
+  <h1>候场喜剧</h1>
+  <div class="en">Melbourne — Sydney</div>
+  <p class="intro">澳大利亚 AUNZ COMEDY MEDIA 旗下运营的<b>专业双语喜剧厂牌</b>。通过喜剧技巧培训、每周开放麦练习与定期商演机会，为喜剧爱好者提供演出平台；承接国内喜剧演员澳洲巡演，助力华语喜剧发展。</p>
+  <div class="links">
+    <a href="#shows">查看近期演出 ↓</a>
+    <a href="#openmic" class="dim">我要上台</a>
+  </div>
+  <figure class="photo">
+    <img src="images/live-melbourne.jpg" alt="刘仁铖专场《小刘的奇妙冒险》墨尔本站演出现场">
+    <figcaption><i>LIVE</i> — 刘仁铖专场《小刘的奇妙冒险》墨尔本站 · RMIT the Capital 全场大合影</figcaption>
+  </figure>
+</div>
+
+<section id="about">
+  <div class="sec">
+    <div class="label">01<small>关于候场</small></div>
+    <div class="content">
+      <p>灯暗下来，好戏在后场。候场喜剧常驻<b>墨尔本与悉尼</b>，从开放麦的段子实验室到国内专场的南半球巡演，构成一套完整的喜剧演出矩阵。</p>
+      <div class="facts">
+        <div class="fact"><div class="n">2<i>城</i></div><div class="l">墨尔本 · 悉尼</div></div>
+        <div class="fact"><div class="n">5<i>大</i></div><div class="l">演出与培训板块</div></div>
+        <div class="fact"><div class="n">∞</div><div class="l">快乐场次</div></div>
+      </div>
+      <div class="mod-list">
+        <div class="mod-row"><div class="mt">专场巡演</div><div class="md">持续邀约国内优秀喜剧演员来澳，墨尔本、悉尼双城开演。</div></div>
+        <div class="mod-row"><div class="mt">开放麦</div><div class="md">段子演练场，本地演员盲盒秀，时不时明星演员闪现。</div></div>
+        <div class="mod-row"><div class="mt">特别企划</div><div class="md">互动场、商演拼盘、"她·在场"全女主题演出等限定策划，与本地商家密切合作。</div></div>
+        <div class="mod-row"><div class="mt">工作坊</div><div class="md">准备 800–1000 字稿子即可参与读稿会、登上开放麦；每季度邀请专业演员培训。</div></div>
+        <div class="mod-row"><div class="mt">播客录制</div><div class="md">《靠左行驶》不定期线下录制，邀请观众一起留下电子回忆。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="shows">
+  <div class="sec">
+    <div class="label">02<small>近期演出</small></div>
+    <div class="content">
+      <div class="feature">
+        <div>
+          <div class="t">Next Up · 即将上演</div>
+          <h3>Rachel47 专场《精卫x海》<small>THE GIRL x THE SEA · AUSTRALIA TOUR</small></h3>
+          <p>Rachel47 中文脱口秀专场澳大利亚巡演——墨尔本、悉尼双城开演。</p>
+          <div class="meta"><b>11.20 墨尔本</b> Library at The Dock, Fri 19:30 ／ <b>11.22 悉尼</b> The Comedy Store, Sun 19:00</div>
+        </div>
+        <div class="side">
+          <img src="images/poster-rachel47.jpg" alt="Rachel47 专场《精卫x海》澳大利亚巡演海报">
+          <div class="cap">《精卫x海》官方巡演海报</div>
+        </div>
+      </div>
+      <div class="tour-list">
+        <div class="tour"><div class="main"><b>候场奇妙夜</b> <span>万圣节变装派对 · 即兴喜剧 / 杀糕大会 / 抽奖</span></div><div class="city">10.31 墨尔本 East Melbourne Library</div></div>
+        <div class="tour"><div class="main"><b>刘仁铖</b> <span>《小刘的奇妙冒险》</span></div><div class="city">10.17 悉尼 / 10.18 墨尔本 / 10.22 珀斯 / 10.23 布里斯班 · 已收官</div></div>
+        <div class="tour"><div class="main"><b>小橘 &amp; 狒狒</b> <span>《沪娘冲击》</span></div><div class="city">9.04 悉尼 Zenith / 9.05 墨尔本 Library at The Dock / 9.06 加场</div></div>
+        <div class="tour"><div class="main"><b>二狗</b> <span>个人专场</span></div><div class="city">10.29 悉尼 · 11.03 / 11.05 墨尔本</div></div>
+        <div class="tour"><div class="main"><b>甜甜 &amp; 粽子</b> <span>《我即是地狱》</span></div><div class="city">悉尼站 · 墨尔本站</div></div>
+        <div class="tour"><div class="main"><b>万冰冰</b> <span>《不懂事儿》</span></div><div class="city">墨尔本站 · 悉尼站</div></div>
+        <div class="tour"><div class="main"><b>宁家宇</b> <span>《狮子骆驼小孩》</span></div><div class="city">墨尔本站 · 悉尼站</div></div>
+        <div class="tour"><div class="main"><b>王梓</b> <span>《默剧盲盒秀》</span></div><div class="city">悉尼站 · 墨尔本站</div></div>
+        <div class="tour"><div class="main"><b>安全出口</b> <span>《安全出口》</span></div><div class="city">墨尔本</div></div>
+        <div class="tour"><div class="main"><b>SeeYa.</b> <span>特别企划「乱讲PPT大赛」</span></div><div class="city">特别企划 · 墨尔本</div></div>
+      </div>
+      <div class="live-strip">
+        <figure>
+          <img src="images/live-sydney.jpg" alt="刘仁铖专场悉尼站演出现场">
+          <figcaption><i>LIVE</i> — 《小刘的奇妙冒险》悉尼站 · Concourse Concert Hall</figcaption>
+        </figure>
+        <figure>
+          <img src="images/live-melbourne-lights.jpg" alt="刘仁铖专场墨尔本站星光合影">
+          <figcaption><i>LIVE</i> — 墨尔本站 · 观众手机灯海合影</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="openmic">
+  <div class="sec">
+    <div class="label">03<small>每周开放麦</small></div>
+    <div class="content">
+      <p>开放麦（Open Mic）是喜剧创作的<b>"实验室"</b>——演员打磨新段子、积累舞台经验的核心场景，也是新人入行的起点。无论专业演员还是纯新人，只需报名即可登台（新人准备至少 5 分钟内容并参加一次读稿会），一起来见证段子的诞生。</p>
+      <div class="om-cols" style="margin-top:52px;">
+        <div class="om">
+          <h4><small>Melbourne</small>墨尔本站</h4>
+          <p>常驻 <b>Club Voltaire</b>（North Melbourne）、<b>Eno Cafe</b>（Box Hill），CBD 场地轮换，读稿会 + 中英文开放麦每周多场。</p>
+        </div>
+        <div class="om">
+          <h4><small>Sydney</small>悉尼站</h4>
+          <p>常驻 <b>ACY Live</b>（Chatswood）、UNSW 剧场，本地演员盲盒秀持续加场，惊喜开放麦解锁大咖。</p>
+        </div>
+        <div class="om">
+          <h4><small>On Stage</small>想上台</h4>
+          <p>公众号后台或小红书私信<b>"我要上台"</b>，人人都可以讲五分钟脱口秀。</p>
+        </div>
+      </div>
+      <div class="om-media">
+        <div>
+          <img src="images/poster-openmic.jpg" alt="候场喜剧喜剧开放麦海报">
+          <div class="cap">每周开放麦预告海报 · Eno Cafe, Box Hill</div>
+        </div>
+        <div class="quote">
+          "一起来见证段子的诞生。"<small>本地演员盲盒秀，时不时有明星演员闪现（惊喜开放麦解锁大咖）。看过任意商演即可兑换一张免费开放麦门票——候场喜剧的舞台等你来。</small>
+        </div>
+      </div>
+      <div class="om-note">快乐通道 · 看过任意候场商演，即可联系小助手（微信 Loading_zone）兑换一张免费开放麦门票；现场除快乐外还有小惊喜随机掉落。演出仅限 16+。</div>
+    </div>
+  </div>
+</section>
+
+<section id="podcast">
+  <div class="sec">
+    <div class="label">04<small>播客</small></div>
+    <div class="content">
+      <div class="pod">
+        <div class="label">Loading Zone Podcast</div>
+        <h3>《靠左行驶》</h3>
+        <p>在南半球靠左行驶的路上，聊喜剧、聊生活、聊一切好笑的事。时间地点以观众招募信息为准，欢迎一起来录制。</p>
+        <div class="hint">小宇宙 / 播客平台 搜索 <b>「靠左行驶」</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sec">
+    <div class="label">05<small>联系我们</small></div>
+    <div class="content">
+      <p>候场喜剧，快乐不止这一场。关注我们，第一时间获取开票与招募信息。</p>
+      <div class="contact-grid" style="margin-top:52px;">
+        <div class="cg">
+          <div class="k">WeChat OA</div>
+          <h5>微信公众号</h5>
+          <p><b>候场喜剧Loading Zone Comedy</b><br>演出资讯 · 开票推送 · 招募信息</p>
+          <img class="qr" src="images/qr-gzh.jpg" alt="候场喜剧公众号二维码">
+        </div>
+        <div class="cg">
+          <div class="k">RedNote</div>
+          <h5>小红书</h5>
+          <p><b>@候场喜剧</b><br>候场邀约 / 开放麦 / 播客 三栏目</p>
+          <img class="qr" src="images/qr-xhs.jpg" alt="候场喜剧小红书二维码">
+        </div>
+        <div class="cg">
+          <div class="k">Assistant</div>
+          <h5>小助手微信</h5>
+          <p><b>Loading_zone</b><br>兑票 · 折扣码 · 上台报名</p>
+          <img class="qr" src="images/qr-assistant.jpg" alt="候场喜剧小助手微信二维码">
+        </div>
+        <div class="cg">
+          <div class="k">Instagram</div>
+          <h5>Instagram</h5>
+          <p><b>扫码关注官方账号</b><br>演出瞬间 · 现场花絮</p>
+          <img class="qr" src="images/qr-ig.jpg" alt="候场喜剧Instagram二维码">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="slogan">候场喜剧 · 快乐不止这一场</div>
+  <div>#澳洲喜剧看候场 #认准厂牌不迷路</div>
+  <div>© 2026 Loading Zone Comedy · AUNZ COMEDY MEDIA</div>
+</footer>
+
+</body>
+</html>
